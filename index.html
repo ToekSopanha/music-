@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freefy Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h1>🎵 FREEFY</h1>
+      <nav>
+        <a href="#">Discover</a>
+        <a href="#">New Releases</a>
+        <a href="#">Popular</a>
+        <a href="#">Charts</a>
+        <a href="#">Radio</a>
+        <a href="#">Install App</a>
+      </nav>
+      <div class="your-music">
+        <h3>Your Music</h3>
+        <a href="#">Songs</a>
+        <a href="#">Albums</a>
+        <a href="#">Artists</a>
+        <a href="history.html">History</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <input type="text" id="searchInput" placeholder="Search music..." oninput="searchMusic()" />
+        <button onclick="logout()">Logout</button>
+      </div>
+
+      <section class="discover">
+        <h2>Discover New Music</h2>
+        <div class="discover-grid" id="discoverGrid">
+          <!-- Featured playlists, albums, or artists will appear here -->
+        </div>
+      </section>
+
+      <section class="music-list">
+        <h2>New Music Friday</h2>
+        <div class="tracks" id="trackList">
+          <!-- Tracks will be displayed here -->
+        </div>
+      </section>
+    </main>
+
+    <aside class="playlist">
+      <h3>Now Playing</h3>
+      <p id="nowPlaying">No song playing</p>
+    </aside>
+  </div>
+  <footer class="player">
+    <audio id="audioPlayer" controls></audio>
+    <div class="track-controls">
+      <button onclick="prevTrack()">Prev</button>
+      <button onclick="playPauseTrack()">Play</button>
+      <button onclick="nextTrack()">Next</button>
+      <input type="range" id="volumeControl" onchange="setVolume()" />
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

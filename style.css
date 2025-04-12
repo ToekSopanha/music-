@@ -1,0 +1,290 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+}
+
+.sidebar h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff4081;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar nav a:hover {
+  background-color: #ff4081;
+}
+
+.sidebar .your-music {
+  margin-top: 30px;
+}
+
+.sidebar .your-music a {
+  color: white;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Main content area */
+.main {
+  margin-left: 250px; /* Space for sidebar */
+  padding: 20px;
+  width: 100%;
+}
+
+/* Top bar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.topbar input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.topbar button {
+  padding: 10px;
+  background-color: #ff4081;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.topbar button:hover {
+  background-color: #e60073;
+}
+
+/* Discover Section */
+.discover {
+  margin-bottom: 40px;
+}
+
+.discover h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.discover-item {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.discover-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.discover-item p {
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Music List Section */
+.music-list {
+  margin-bottom: 40px;
+}
+
+.music-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.tracks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.track {
+  background-color: white;
+  border-radius: 10px;
+  width: 200px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.track:hover {
+  transform: scale(1.05);
+}
+
+.track img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.track p {
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Playlist Section */
+.playlist {
+  width: 250px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.playlist h3 {
+  font-size: 1.2rem;
+}
+
+#nowPlaying {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #ff4081;
+}
+
+/* Footer (Player Controls) */
+footer.player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #222;
+  padding: 10px;
+  color: white;
+}
+
+footer .track-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .track-controls button {
+  background-color: #ff4081;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer .track-controls button:hover {
+  background-color: #e60073;
+}
+
+footer .track-controls input {
+  width: 50%;
+  margin: 0 10px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  footer.player {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .topbar input {
+    width: 60%;
+  }
+
+  .discover-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tracks {
+    flex-direction: column;
+  }
+
+  .track {
+    width: 100%;
+  }
+
+  footer .track-controls input {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .topbar input {
+    width: 50%;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .sidebar nav a {
+    font-size: 0.9rem;
+  }
+
+  .discover-item p {
+    font-size: 0.9rem;
+  }
+
+  footer .track-controls input {
+    width: 90%;
+  }
+}
